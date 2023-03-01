@@ -15,7 +15,7 @@ public class GiftAdapter implements Payment {
     public String pay(Item item) {
         // TODO: DONE
         // Melakukan redeem, method di Gift yang setingkat dengan pay di dalam BelanjaaPayPayment
-        String notification = adaptedGift.redeem(item);
+        String notification = this.adaptedGift.redeem(item);
         return notification;
     }
 }

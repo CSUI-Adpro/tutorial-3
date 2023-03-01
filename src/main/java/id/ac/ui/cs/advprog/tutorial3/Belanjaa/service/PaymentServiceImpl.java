@@ -43,9 +43,9 @@ public class PaymentServiceImpl implements PaymentService{
         }
 
         // Mengecek keberadaan coupon, gift, dan payment
-        Boolean isCouponExist = paymentRepository.contains(paymentCode);
+        Boolean isCouponExist = couponRepository.contains(paymentCode);
         Boolean isGiftExist = giftRepository.contains(paymentCode);
-        Boolean isPaymentExist = giftRepository.contains(paymentCode);
+        Boolean isPaymentExist = paymentRepository.contains(paymentCode);
 
         // Mengecek coupon dan pembayarannya
         if (isCouponExist) {

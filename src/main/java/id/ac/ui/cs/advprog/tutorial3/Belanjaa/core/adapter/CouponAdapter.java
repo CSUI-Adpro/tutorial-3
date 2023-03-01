@@ -15,7 +15,7 @@ public class CouponAdapter  implements Payment {
     public String pay(Item item) {
         // TODO: DONE
         // Melakukan redeem, method di Coupon yang setingkat dengan pay di dalam BelanjaaPayPayment
-        String notification = adaptedCoupon.redeem(item);
+        String notification = this.adaptedCoupon.redeem(item);
         return notification;
     }
 }
