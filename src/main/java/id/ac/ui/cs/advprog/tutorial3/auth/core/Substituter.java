@@ -20,9 +20,13 @@ public class Substituter implements ITransformer {
     }
 
     public String transform(String str) {
-        // TODO: Complete this function
-
-        return "";
+        // TODO: DONE
+        // Melakukan transformasi subtitution dengan mapping seed yang ada
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            result += mapping.get(str.charAt(i));
+        }
+        return result;
     }
 
 }

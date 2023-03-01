@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.tutorial3.auth.service;
 
+import id.ac.ui.cs.advprog.tutorial3.auth.core.Encryptor;
 import id.ac.ui.cs.advprog.tutorial3.auth.core.User;
 import id.ac.ui.cs.advprog.tutorial3.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,10 @@ public class AuthServiceImpl implements AuthService {
     }
 
     private String toCipher(String password) {
-        // TODO: Complete this function
-
-        return "";
+        // TODO: DONE
+        // Melakukan chiper password
+        Encryptor encryptor = new Encryptor();
+        String encryptPassword = encryptor.encrypt(password);
+        return encryptPassword;
     }
 }

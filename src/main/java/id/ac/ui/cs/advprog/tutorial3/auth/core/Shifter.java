@@ -8,9 +8,23 @@ public class Shifter implements ITransformer {
     }
 
     public String transform(String str) {
-        // TODO: Complete this function
-
-        return "";
+        // TODO: DONE
+        // Melakukan shift sesuai nilai
+        // Jika disposisi positif maka ke kanan
+        // Jika disposisi negatif maka ke kiri
+        String content = str;
+        if (this.disposition > 0) {
+            for (int i = 0; i < this.disposition; i++) {
+                content = shiftRightByOne(content);
+            }
+        } else if (this.disposition < 0){
+            for (int i = 0; i < this.disposition; i++) {
+                content = shiftLeftByOne(content);
+            }
+        } else {
+            ; // pass ketika disposisi == 0
+        }
+        return content;
     }
 
     private String shiftRightByOne(String s) {
