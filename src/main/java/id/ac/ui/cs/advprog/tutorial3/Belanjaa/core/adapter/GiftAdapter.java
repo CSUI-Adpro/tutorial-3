@@ -15,7 +15,12 @@ public class GiftAdapter implements Payment {
     public String pay(Item item) {
         // TODO: DONE
         // Melakukan redeem, method di Gift yang setingkat dengan pay di dalam BelanjaaPayPayment
-        String notification = this.adaptedGift.redeem(item);
+        // Jika sudah pernah direedem maka kembalikan string "Your coupon is already redeemed"
+        String notification;
+        if (this.adaptedGift.isRedeemed()) {
+            return String.format("Your gift is already redeemed");
+        }
+        notification = this.adaptedGift.redeem(item);
         return notification;
     }
 }
