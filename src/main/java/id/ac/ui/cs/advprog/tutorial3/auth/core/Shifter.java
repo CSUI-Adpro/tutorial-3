@@ -17,12 +17,13 @@ public class Shifter implements ITransformer {
             for (int i = 0; i < this.disposition; i++) {
                 content = shiftRightByOne(content);
             }
-        } else if (this.disposition < 0){
+        } else if (this.disposition < 0) {
+            this.disposition = Math.abs(this.disposition);
             for (int i = 0; i < this.disposition; i++) {
                 content = shiftLeftByOne(content);
             }
         } else {
-            ; // pass ketika disposisi == 0
+            ; // saat disposisi == 0 di pass
         }
         return content;
     }
