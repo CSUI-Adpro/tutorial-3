@@ -37,26 +37,32 @@ public class PaymentServiceImpl implements PaymentService{
         // Mendapatkan item sesuai nama itemnya
         Item item = itemRepository.getItem(itemName);
 
+        // Jika item null maka return "Item not found"
         if (item == null) {
-            return "Payment log is empty";
+            return "Item not found";
         }
 
+        // Mengecek keberadaan coupon, gift, dan payment
         Boolean isCouponExist = paymentRepository.contains(paymentCode);
         Boolean isGiftExist = giftRepository.contains(paymentCode);
         Boolean isPaymentExist = giftRepository.contains(paymentCode);
 
+        // Mengecek coupon dan pembayarannya
         if (isCouponExist) {
             CouponAdapter couponAdapter = new CouponAdapter(couponRepository.getCoupon(paymentCode));
             return couponAdapter.pay(item);
         }
+        // Mengecek gift dan pembayarannya
         if (isGiftExist) {
             GiftAdapter giftAdapter = new GiftAdapter(giftRepository.getGift(paymentCode));
             return giftAdapter.pay(item);
         }
+        // Mengecek payment dan pembayarannya
         if (isPaymentExist) {
             return paymentRepository.getPayment(paymentCode).pay(item);
         }
 
+        // Jika tidak ada pembayaran maka return "Payment log is empty"
         return "Payment log is empty";
     }
 }
