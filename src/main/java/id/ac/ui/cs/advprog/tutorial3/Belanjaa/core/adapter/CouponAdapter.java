@@ -18,7 +18,7 @@ public class CouponAdapter  implements Payment {
         // Jika sudah pernah direedem maka kembalikan string "Your coupon is already redeemed"
         String notification;
         if (this.adaptedCoupon.isRedeemed()) {
-            return String.format("Your gift is already redeemed");
+            return String.format("Your coupon is already redeemed");
         }
         notification = this.adaptedCoupon.redeem(item);
         return notification;

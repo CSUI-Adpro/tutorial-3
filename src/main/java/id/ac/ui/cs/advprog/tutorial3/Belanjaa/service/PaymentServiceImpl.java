@@ -39,7 +39,7 @@ public class PaymentServiceImpl implements PaymentService{
 
         // Jika item null maka return "Item not found"
         if (item == null) {
-            return "Item not found";
+            return "Payment log is empty";
         }
 
         // Mengecek keberadaan coupon, gift, dan payment
