@@ -13,8 +13,9 @@ public class GiftAdapter implements Payment {
 
     @Override
     public String pay(Item item) {
-        // TODO: implement method
-
-        return null;
+        // TODO: DONE
+        // Melakukan redeem, method di Gift yang setingkat dengan pay di dalam BelanjaaPayPayment
+        String notification = adaptedGift.redeem(item);
+        return notification;
     }
 }

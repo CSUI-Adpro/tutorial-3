@@ -13,8 +13,9 @@ public class CouponAdapter  implements Payment {
 
     @Override
     public String pay(Item item) {
-        // TODO: implement method
-
-        return null;
+        // TODO: DONE
+        // Melakukan redeem, method di Coupon yang setingkat dengan pay di dalam BelanjaaPayPayment
+        String notification = adaptedCoupon.redeem(item);
+        return notification;
     }
 }
